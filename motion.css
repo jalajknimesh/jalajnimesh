@@ -1,0 +1,61 @@
+/* Motion is used to guide attention, not decorate the page. */
+:root{--ease-out:cubic-bezier(.22,1,.36,1);--ease-soft:cubic-bezier(.2,.7,.2,1);--motion-fast:180ms;--motion-med:520ms;--motion-slow:760ms}
+
+html{scroll-padding-top:84px}
+
+.motion-ready [data-reveal]{opacity:0;transform:translateY(16px);transition:opacity var(--motion-med) var(--ease-out),transform var(--motion-med) var(--ease-out)}
+.motion-ready [data-reveal].is-visible{opacity:1;transform:none}
+.motion-ready [data-reveal="slow"]{transition-duration:var(--motion-slow)}
+.motion-ready [data-delay="1"]{transition-delay:70ms}
+.motion-ready [data-delay="2"]{transition-delay:140ms}
+.motion-ready [data-delay="3"]{transition-delay:210ms}
+.motion-ready [data-delay="4"]{transition-delay:280ms}
+
+.motion-highlight{position:relative;display:inline;z-index:0;padding:0 .02em}
+.motion-highlight::after{content:"";position:absolute;z-index:-1;left:-.03em;right:-.03em;bottom:.09em;height:.26em;background:rgba(31,90,68,.17);transform:scaleX(0);transform-origin:left center;transition:transform 720ms var(--ease-out) 120ms;border-radius:1px}
+.motion-highlight.is-visible::after{transform:scaleX(1)}
+
+.topbar nav a{position:relative;transition:color var(--motion-fast) ease}
+.topbar nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:1px;background:var(--accent);transition:right 280ms var(--ease-out)}
+.topbar nav a:hover,.topbar nav a.is-active{color:var(--ink)}
+.topbar nav a:hover::after,.topbar nav a.is-active::after{right:0}
+
+.primary,.top-cta,.text-link,.background-link,.email-link,.socials a,.offer-foot a,.proof-links a,.build-grid a,.delivery-proof a,.research-tags a{transition:transform var(--motion-fast) var(--ease-out),color var(--motion-fast) ease,background-color var(--motion-fast) ease,border-color var(--motion-fast) ease}
+.primary:hover,.top-cta:hover{transform:translateY(-2px)}
+.text-link:hover,.background-link:hover,.email-link:hover,.socials a:hover,.offer-foot a:hover,.proof-links a:hover,.build-grid a:hover,.delivery-proof a:hover,.research-tags a:hover{color:var(--accent-dark);transform:translateX(2px)}
+
+.case-row,.research-item{position:relative;transition:background-color 260ms ease,padding-left 280ms var(--ease-out)}
+.case-row::before,.research-item::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:2px;background:var(--accent);transform:scaleY(0);transform-origin:top;transition:transform 300ms var(--ease-out)}
+.case-row:hover,.research-item:hover{background:linear-gradient(90deg,rgba(31,90,68,.045),transparent 42%);padding-left:14px}
+.case-row:hover::before,.research-item:hover::before{transform:scaleY(1)}
+.case-finding h3,.research-body h3{transition:color var(--motion-fast) ease,transform 280ms var(--ease-out)}
+.case-row:hover .case-finding h3,.research-item:hover .research-body h3{color:var(--accent-dark);transform:translateX(3px)}
+
+.evidence dl>div{position:relative;overflow:hidden}
+.evidence dl>div::after{content:"";position:absolute;left:0;bottom:-1px;width:100%;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 420ms var(--ease-out)}
+.evidence dl>div:hover::after{transform:scaleX(1)}
+.evidence dt{transition:transform 280ms var(--ease-out),color var(--motion-fast) ease}
+.evidence dl>div:hover dt{transform:translateX(4px);color:var(--accent)}
+
+.price-line strong,.offer-price{position:relative;display:inline-block}
+.price-line strong::after,.offer-price::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 700ms var(--ease-out)}
+.price-line strong.is-visible::after,.offer-price.is-visible::after{transform:scaleX(1)}
+
+.profile-ledger a,.build-grid article{position:relative;transition:transform 280ms var(--ease-out),background-color 220ms ease}
+.profile-ledger a:hover,.build-grid article:hover{transform:translateY(-4px);background:rgba(31,90,68,.035)}
+.profile-ledger a::after{content:"↗";position:absolute;right:18px;top:18px;color:var(--accent);opacity:0;transform:translate(-4px,4px);transition:opacity 220ms ease,transform 280ms var(--ease-out)}
+.profile-ledger a:hover::after{opacity:1;transform:none}
+
+.work-metrics div{transition:background-color 220ms ease}
+.work-metrics div:hover{background:rgba(31,90,68,.04)}
+.work-metrics strong{transition:transform 280ms var(--ease-out),color 200ms ease}
+.work-metrics div:hover strong{transform:translateY(-2px);color:var(--accent)}
+
+.section-intro,.detail-heading,.background-grid,.pricing-grid,.contact-grid,.profiles-head,.work-hero,.delivery-grid{isolation:isolate}
+
+.scroll-progress{position:fixed;z-index:30;top:0;left:0;height:2px;width:100%;pointer-events:none;background:transparent}
+.scroll-progress span{display:block;height:100%;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left center;will-change:transform}
+
+@media (hover:none){.case-row:hover,.research-item:hover{padding-left:0;background:transparent}.case-row:hover::before,.research-item:hover::before{transform:scaleY(0)}.case-row:hover .case-finding h3,.research-item:hover .research-body h3{transform:none}.profile-ledger a:hover,.build-grid article:hover{transform:none;background:transparent}.profile-ledger a::after{display:none}}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.motion-ready [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}.motion-highlight::after,.price-line strong::after,.offer-price::after{transform:scaleX(1)!important;transition:none!important}.case-row,.research-item,.case-finding h3,.research-body h3,.primary,.top-cta,.text-link,.background-link,.email-link,.socials a,.offer-foot a,.profile-ledger a,.build-grid article,.work-metrics strong{transition:none!important}.scroll-progress{display:none}}

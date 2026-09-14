@@ -1,16 +1,18 @@
 const yearNode = document.getElementById('year');
 if (yearNode) yearNode.textContent = new Date().getFullYear();
 
-const loadScript = (src) => new Promise((resolve) => {
-  const script = document.createElement('script');
-  script.src = src;
-  script.onload = resolve;
-  script.onerror = resolve;
-  document.head.appendChild(script);
-});
+const heroWord = document.querySelector('.hero-word');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-(async () => {
-  await loadScript('home-enhance.js');
-  await loadScript('minimal-home.js');
-  await loadScript('motion.js');
-})();
+if (heroWord && !reduceMotion) {
+  const words = ['web apps.', 'APIs.', 'SaaS products.'];
+  let index = 0;
+  window.setInterval(() => {
+    heroWord.classList.add('is-swapping');
+    window.setTimeout(() => {
+      index = (index + 1) % words.length;
+      heroWord.textContent = words[index];
+      heroWord.classList.remove('is-swapping');
+    }, 180);
+  }, 3200);
+}

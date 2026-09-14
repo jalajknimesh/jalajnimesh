@@ -1,3 +1,5 @@
+document.documentElement.classList.add('js');
+
 const yearNode = document.getElementById('year');
 if (yearNode) yearNode.textContent = new Date().getFullYear();
 

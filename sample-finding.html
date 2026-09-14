@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<title>Representative Finding Format — Jalaj Kumar Nimesh</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="sample-page">
+<header class="sample-header"><div class="wrap"><a href="index.html">← Back to portfolio</a><span>Representative finding format</span></div></header>
+<main class="sample-main wrap">
+  <section class="sample-hero">
+    <p class="kicker">Synthetic example · no client data</p>
+    <h1>Cross-tenant user update through missing ownership validation.</h1>
+    <p>This page demonstrates the structure and level of evidence used in a client finding. The system, identities and endpoint below are fictional.</p>
+  </section>
+  <section class="sample-summary">
+    <div><span>Severity</span><strong>High</strong></div>
+    <div><span>Category</span><strong>Broken Access Control</strong></div>
+    <div><span>CWE</span><strong>CWE-639</strong></div>
+    <div><span>Status</span><strong>Reproducible</strong></div>
+  </section>
+  <div class="sample-layout">
+    <div class="sample-body">
+      <section><p class="kicker">Executive impact</p><h2>A user from one tenant can modify another tenant’s account.</h2><p>The API trusts a user identifier supplied in the request path without verifying that the target user belongs to the authenticated customer. An attacker with an ordinary account can therefore modify another organization’s user record if a valid identifier is known.</p></section>
+      <section><p class="kicker">Reproduction</p><h2>Minimal proof of exploitability.</h2><ol><li>Authenticate as a normal user in Tenant A.</li><li>Obtain the identifier of a test user belonging to Tenant B.</li><li>Send an update request while keeping Tenant A’s valid session.</li><li>Observe that the API accepts the update and changes Tenant B’s record.</li></ol><pre>PUT /api/users/usr_tenant_b_1042
+Authorization: Bearer &lt;tenant-a-token&gt;
+Content-Type: application/json
+
+{"display_name":"Cross-tenant proof"}
+
+HTTP/1.1 200 OK</pre><p>The successful response and subsequent read-back confirm that authorization is enforced at authentication level but not at tenant ownership level.</p></section>
+      <section><p class="kicker">Root cause</p><h2>Authorization checks identity, but not ownership.</h2><p>The handler retrieves the target user directly by identifier and permits the operation after validating only that the requester is authenticated. The authorization layer does not compare the target record’s tenant identifier with the requester’s tenant.</p></section>
+      <section><p class="kicker">Remediation</p><h2>Bind authorization to the tenant context.</h2><p>Resolve mutable user records through the authenticated tenant context rather than a global identifier lookup. Enforce the tenant relationship server-side for every read and write path, return a non-distinguishing error for out-of-scope identifiers, and add regression tests covering cross-tenant object access.</p></section>
+      <section><p class="kicker">Retest criteria</p><h2>What I would verify after the fix.</h2><p>Repeat the original cross-tenant request with multiple roles and object identifiers, confirm that out-of-tenant operations fail consistently, test adjacent endpoints for the same authorization primitive, and verify that legitimate same-tenant workflows remain functional.</p></section>
+    </div>
+    <aside class="sample-aside">
+      <div><span>What the client gets</span><p>Impact, reproduction evidence, root cause, remediation and retest criteria — not only a scanner alert.</p></div>
+      <div><span>Evidence style</span><p>Requests, responses and screenshots are included when they materially prove exploitability.</p></div>
+      <div><span>Confidentiality</span><p>Real client identifiers and sensitive exploit details are never published without permission.</p></div>
+    </aside>
+  </div>
+</main>
+</body>
+</html>

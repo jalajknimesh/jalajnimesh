@@ -1,0 +1,29 @@
+/* Motion supports hierarchy; it never changes layout or hides page content. */
+@media (prefers-reduced-motion:no-preference){
+  .portfolio-page .hero-main h1{animation:portfolio-rise .45s cubic-bezier(.22,1,.36,1) both}
+  .portfolio-page .hero-promise{animation:portfolio-rise .45s cubic-bezier(.22,1,.36,1) .05s both}
+  .portfolio-page .hero-lede{animation:portfolio-rise .45s cubic-bezier(.22,1,.36,1) .10s both}
+  .portfolio-page .hero-actions{animation:portfolio-rise .45s cubic-bezier(.22,1,.36,1) .15s both}
+  .portfolio-page .hero-proof{animation:portfolio-fade .5s ease .08s both}
+  @keyframes portfolio-rise{from{opacity:.001;transform:translateY(8px)}to{opacity:1;transform:none}}
+  @keyframes portfolio-fade{from{opacity:.001}to{opacity:1}}
+}
+
+@media (hover:hover){
+  .portfolio-page .hero-proof-item{margin-inline:-12px;padding-inline:12px;transition:background-color .16s ease}
+  .portfolio-page .hero-proof-item:hover{background:rgba(255,255,255,.045)}
+
+  .portfolio-page .credibility-strip-inner strong{transition:color .16s ease}
+  .portfolio-page .credibility-strip-inner strong:hover{color:#d6f3c3}
+
+  .portfolio-page .impact-row{position:relative;transition:background-color .16s ease}
+  .portfolio-page .impact-row:before{content:"";position:absolute;left:-16px;top:20px;bottom:20px;width:2px;background:var(--accent);transform:scaleY(0);transform-origin:center;transition:transform .16s ease}
+  .portfolio-page .impact-row:hover{background:rgba(18,55,43,.022)}
+  .portfolio-page .impact-row:hover:before{transform:scaleY(1)}
+
+  .portfolio-page .impact-company strong{background-image:linear-gradient(var(--forest),var(--forest));background-repeat:no-repeat;background-position:0 100%;background-size:0 1px;transition:background-size .18s ease}
+  .portfolio-page .impact-row:hover .impact-company strong{background-size:100% 1px}
+
+  .portfolio-page .background-row{transition:background-color .16s ease}
+  .portfolio-page .background-row:hover{background:rgba(18,55,43,.025)}
+}

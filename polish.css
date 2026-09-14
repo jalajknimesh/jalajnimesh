@@ -1,37 +1,37 @@
-/* Final restraint layer: no layout-shifting hover, readable labels, fewer visual tricks. */
+/* Final restraint layer: stable findings, readable labels, fewer visual tricks. */
 
-/* Findings never move. Hover only changes paint/opacity. */
+/* Findings are editorial content, not interactive cards. Keep them completely stationary. */
+.case-list,.case-row,.case-org,.case-finding,.research-list,.research-item,.research-meta,.research-body{min-width:0!important;max-width:100%}
 .case-row,.research-item{
   padding-left:0!important;
   transform:none!important;
-  transition:background-color 140ms ease-out!important;
+  transition:none!important;
 }
 .case-row:hover,.research-item:hover{
   padding-left:0!important;
   transform:none!important;
-  background:rgba(31,90,68,.025)!important;
+  background:transparent!important;
 }
-.case-row::before,.research-item::before{
-  top:22px!important;
-  bottom:22px!important;
-  transform:scaleY(0)!important;
-  opacity:0;
-  transition:transform 160ms cubic-bezier(.2,.7,.2,1),opacity 120ms ease-out!important;
-}
+.case-row::before,.research-item::before,
 .case-row:hover::before,.research-item:hover::before{
-  transform:scaleY(1)!important;
-  opacity:.72;
+  display:none!important;
+  content:none!important;
 }
-.case-finding,.research-body,.case-finding h3,.research-body h3{
-  transform:none!important;
-  transition:color 140ms ease-out!important;
-}
+.case-finding,.research-body,.case-finding h3,.research-body h3,
 .case-row:hover .case-finding,.research-item:hover .research-body,
 .case-row:hover .case-finding h3,.research-item:hover .research-body h3{
   transform:none!important;
+  transition:none!important;
 }
 .case-row:hover .case-finding h3,.research-item:hover .research-body h3{
-  color:var(--accent-dark);
+  color:var(--ink)!important;
+}
+.case-row{grid-template-columns:minmax(0,165px) minmax(0,1fr)!important}
+.case-finding h3,.research-body h3,.case-finding p,.research-body p{
+  max-width:100%!important;
+  white-space:normal!important;
+  overflow-wrap:break-word!important;
+  word-break:normal!important;
 }
 
 /* Metadata should be readable, not decorative microcopy. */
@@ -60,7 +60,7 @@
 .text-link,.background-link,.offer-foot a,.socials a{font-weight:650!important}
 
 @media(max-width:640px){
-  .case-row::before,.research-item::before{display:none!important}
+  .case-row{grid-template-columns:1fr!important}
   .offer-details>div{grid-template-columns:1fr!important;gap:8px!important;padding:20px 0!important}
   .offer-details span{font-size:14.5px!important}
   .offer-details p{font-size:16.5px!important}

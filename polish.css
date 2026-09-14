@@ -1,0 +1,42 @@
+/* Final restraint layer: no layout-shifting hover, readable labels, fewer visual tricks. */
+
+/* Smooth interaction: compositor-friendly only. */
+.case-row,.research-item{padding-left:0!important;transition:background-color 160ms ease-out!important}
+.case-row:hover,.research-item:hover{padding-left:0!important;background:rgba(31,90,68,.028)!important}
+.case-row::before,.research-item::before{top:24px!important;bottom:24px!important;transition:transform 170ms cubic-bezier(.0,.0,.2,1)!important}
+.case-finding,.research-body{transition:transform 170ms cubic-bezier(.0,.0,.2,1)}
+.case-row:hover .case-finding,.research-item:hover .research-body{transform:translateX(4px)}
+.case-row:hover .case-finding h3,.research-item:hover .research-body h3{transform:none!important}
+
+/* Metadata should be readable, not decorative microcopy. */
+.case-label{font-family:inherit!important;font-size:13px!important;line-height:1.45!important;letter-spacing:0!important;text-transform:none!important;font-weight:650!important;color:var(--muted)!important}
+.case-org strong{font-size:17px!important}
+.case-org span{font-size:14px!important}
+.case-finding h3{font-size:21px!important;line-height:1.3!important}
+.case-finding>p:not(.case-label):not(.case-proof){font-size:16px!important;line-height:1.62!important;max-width:68ch!important}
+.case-proof{font-size:14.5px!important}
+
+/* Pricing should scan like a proposal, not a dashboard. */
+.offer-label{font-size:15px!important;color:var(--muted)!important}
+.offer-price{font-size:32px!important;letter-spacing:-.025em}
+.offer-retainer{font-size:14.5px!important;color:var(--muted)!important}
+.offer-details>div{grid-template-columns:175px minmax(0,1fr)!important;gap:32px!important;padding:23px 0!important}
+.offer-details span{font-family:inherit!important;font-size:15px!important;line-height:1.45!important;letter-spacing:0!important;text-transform:none!important;font-weight:700!important;color:var(--ink)!important}
+.offer-details p{font-size:17px!important;line-height:1.58!important;max-width:66ch!important;color:#414a50!important}
+.offer-foot{padding-top:22px!important}
+.offer-foot a{font-size:15px!important}
+.offer-foot span{font-size:13.5px!important}
+
+/* Reduce the visual weight of section headings on the sales page. */
+.work-block .section-intro h2,.background-block h2,.pricing-title h2,.contact-block h2{font-size:clamp(30px,2.7vw,38px)!important;line-height:1.12!important}
+
+/* More natural link emphasis. */
+.text-link,.background-link,.offer-foot a,.socials a{font-weight:650!important}
+
+@media(max-width:640px){
+  .case-row:hover .case-finding,.research-item:hover .research-body{transform:none}
+  .offer-details>div{grid-template-columns:1fr!important;gap:8px!important;padding:20px 0!important}
+  .offer-details span{font-size:14.5px!important}
+  .offer-details p{font-size:16.5px!important}
+  .offer-top{gap:8px!important}
+}

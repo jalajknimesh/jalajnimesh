@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Jalaj Kumar Nimesh — Offensive Security Engineer offering direct web and API penetration testing, backed by real security research and transparent VAPT pricing." />
+  <meta name="description" content="Jalaj Kumar Nimesh — Offensive Security Engineer offering direct Web & API penetration testing, backed by real security research and transparent VAPT pricing." />
   <meta name="author" content="Jalaj Kumar Nimesh" />
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#f4f2eb" />
+  <meta name="theme-color" content="#f6f4ee" />
   <meta property="og:title" content="Jalaj Kumar Nimesh — Web & API VAPT" />
-  <meta property="og:description" content="Direct Web & API VAPT, real security work, professional background and transparent pricing." />
+  <meta property="og:description" content="Direct Web & API penetration testing, real security work, professional background and transparent pricing." />
   <meta property="og:type" content="website" />
   <title>Jalaj Kumar Nimesh — Web & API VAPT</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
@@ -29,19 +29,20 @@
   <main id="main">
     <section id="top" class="hero">
       <div class="wrap hero-grid">
-        <div class="hero-main reveal">
+        <div class="hero-main">
+          <p class="hero-kicker">Independent Web + API VAPT</p>
           <h1>Web &amp; API penetration testing.</h1>
           <p class="hero-promise">Directly with the tester.</p>
-          <p class="hero-lede">Manual testing focused on authorization, authentication, tenant isolation and business logic — where product context matters more than scanner coverage.</p>
+          <p class="hero-lede">I focus on access control, authentication, APIs and business logic — the failures that can expose customer data, break tenant isolation or lead to account compromise.</p>
           <div class="hero-actions">
             <a class="primary" href="mailto:jalajkumar1011@gmail.com?subject=VAPT%20scope%20request"><span>Discuss your scope</span><b aria-hidden="true">↗</b></a>
             <a class="secondary-link" href="#work">See the work <span aria-hidden="true">↓</span></a>
           </div>
         </div>
 
-        <aside class="hero-proof reveal" aria-label="Selected security evidence">
-          <p class="hero-proof-label">Selected evidence</p>
-          <div class="hero-proof-item"><strong>Axis Bank</strong><span>Credit-card customers’ PII exposure</span></div>
+        <aside class="hero-proof" aria-label="Selected security evidence">
+          <div class="hero-proof-head"><span>Selected evidence</span><small>Public + private research</small></div>
+          <div class="hero-proof-item"><strong>Axis Bank</strong><span>Credit-card customers’ PII exposed</span></div>
           <div class="hero-proof-item"><strong>Passport Seva</strong><span>Account takeover risk</span></div>
           <div class="hero-proof-item"><strong>CVE-2026-72831</strong><span>Low privilege → full administrator</span></div>
           <div class="hero-price"><span>Typical Web + API VAPT</span><strong>₹60k–₹90k</strong><small>one remediation retest included</small></div>
@@ -49,64 +50,70 @@
       </div>
     </section>
 
+    <section class="credibility-strip" aria-label="Additional validation">
+      <div class="wrap credibility-strip-inner"><span>Research acknowledged or rewarded by</span><strong>Red Hat</strong><strong>Blinkit</strong><strong>Utho</strong><strong>Survicate</strong><strong>MSG91</strong></div>
+    </section>
+
     <section id="work" class="work-section">
       <div class="wrap">
-        <header class="section-intro reveal"><p>Security work</p><h2>Real findings and what they exposed.</h2></header>
+        <header class="section-intro"><p>Security work</p><h2>What an attacker could actually do.</h2></header>
 
         <div class="impact-list">
-          <article class="impact-row reveal"><div class="impact-company"><strong>Axis Bank</strong><span>Responsible disclosure</span></div><div class="impact-story"><h3>Unauthorized access to credit-card customers’ PII.</h3><p>Sensitive information associated with credit-card customers could be retrieved outside the intended access controls.</p><small>Business impact: customer data exposure</small></div></article>
+          <article class="impact-row"><div class="impact-company"><strong>Axis Bank</strong><span>Responsible disclosure</span></div><div class="impact-story"><h3>Access credit-card customers’ personal data outside the intended controls.</h3><p>Sensitive information associated with credit-card customers could be retrieved beyond the intended authorization boundary.</p><small>Customer data exposure</small></div></article>
 
-          <article class="impact-row reveal"><div class="impact-company"><strong>Passport Seva</strong><span>Government of India</span></div><div class="impact-story"><h3>Account recovery weakness could lead to account takeover and sensitive data access.</h3><p>The issue affected a high-value identity account flow and was later fixed.</p><small>Business impact: account compromise</small></div></article>
+          <article class="impact-row"><div class="impact-company"><strong>Passport Seva</strong><span>Government of India</span></div><div class="impact-story"><h3>Take over an account through a weakness in the recovery flow.</h3><p>The issue affected a high-value identity account and could expose sensitive account information. It was later fixed.</p><small>Account compromise · sensitive data access</small></div></article>
 
-          <article class="impact-row reveal"><div class="impact-company"><strong>CVE-2026-72831</strong><span>Public advisory · 8.8 High</span></div><div class="impact-story"><h3>A lower-privilege user could gain full administrative control.</h3><p>An authorization flaw allowed privilege escalation to administrator-level access.</p><small class="impact-links"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-72831" target="_blank" rel="noreferrer">NVD ↗</a><a href="https://github.com/getgrav/grav/security/advisories/GHSA-pc8m-jxvh-vmrc" target="_blank" rel="noreferrer">Vendor advisory ↗</a></small></div></article>
+          <article class="impact-row"><div class="impact-company"><strong>CVE-2026-72831</strong><span>Public advisory · 8.8 High</span></div><div class="impact-story"><h3>Turn a lower-privilege account into full administrative control.</h3><p>An authorization flaw allowed privilege escalation to administrator-level access.</p><small class="impact-links"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-72831" target="_blank" rel="noreferrer">NVD ↗</a><a href="https://github.com/getgrav/grav/security/advisories/GHSA-pc8m-jxvh-vmrc" target="_blank" rel="noreferrer">Vendor advisory ↗</a></small></div></article>
 
-          <article class="impact-row reveal"><div class="impact-company"><strong>MSG91</strong><span>Paid security research</span></div><div class="impact-story"><h3>Multiple paths to customer-data exposure and account compromise.</h3><p>Validated findings included database injection, persistent/reflected script execution, and a broken account-update authorization control that weakened the intended 2FA boundary.</p><small>Technical detail: SQL injection · stored/reflected XSS · broken authorization</small></div></article>
+          <article class="impact-row"><div class="impact-company"><strong>MSG91</strong><span>Paid security research</span></div><div class="impact-story"><h3>Expose customer data and weaken account protection through multiple independent flaws.</h3><p>The accepted findings included a database-injection issue, persistent/reflected browser-script execution, and a broken account-update authorization check that weakened the intended 2FA boundary.</p><small>Technical detail: SQL injection · stored/reflected XSS · broken authorization</small></div></article>
 
-          <article class="impact-row reveal"><div class="impact-company"><strong>Confidential B2B client</strong><span>Authorized VAPT</span></div><div class="impact-story"><h3>One customer tenant could act on another tenant’s user accounts.</h3><p>The assessment identified a cross-tenant authorization failure in a multi-tenant security platform.</p><small>Business impact: tenant-isolation failure</small></div></article>
+          <article class="impact-row"><div class="impact-company"><strong>Confidential B2B client</strong><span>Authorized VAPT</span></div><div class="impact-story"><h3>Operate on another customer tenant’s user accounts.</h3><p>The assessment identified a cross-tenant authorization failure in a multi-tenant security platform.</p><small>Tenant-isolation failure</small></div></article>
         </div>
-
-        <div class="validation-rail reveal" aria-label="Additional security research validation"><span>Also acknowledged or rewarded by</span><strong>Red Hat</strong><strong>Blinkit</strong><strong>Utho</strong><strong>Survicate</strong></div>
       </div>
     </section>
 
     <section id="background" class="background-section">
-      <div class="wrap">
-        <header class="section-intro reveal"><p>Background</p><h2>Professional testing, research and delivery.</h2></header>
-
-        <div class="metric-line metric-line-three reveal" aria-label="Professional proof">
-          <div><strong>20+</strong><span>Web &amp; API assessments</span></div>
-          <div><strong>2</strong><span>Published CVEs</span></div>
-          <div><strong>4.8 / 5</strong><span>Fiverr rating · 68 reviews</span></div>
+      <div class="wrap background-grid">
+        <div class="background-intro">
+          <p>Background</p>
+          <h2>Security work beyond the engagement.</h2>
+          <p class="background-lede">Client testing is one part of the work. I also review vulnerability submissions, build hands-on labs and write automation for repetitive security workflows.</p>
         </div>
 
-        <div class="background-list">
-          <div class="background-row reveal"><span>Professional</span><p><strong>Security Engineer / Penetration Tester at BugBase.</strong> Web &amp; API assessments, exploitability analysis, vulnerability triage and remediation validation.</p></div>
-          <div class="background-row reveal"><span>Built</span><p><a href="https://tryhackme.com/room/road" target="_blank" rel="noreferrer">TryHackMe Road ↗</a> · Intigriti 1337UP Traveller challenge · 20 Docker-based security labs for PWNX.</p></div>
-          <div class="background-row reveal"><span>Recognition</span><p><strong>1st place</strong> — Great AppSec Hackathon 2026 · <strong>2nd individual</strong> — Ghost in the Ledger, IIT Bombay.</p></div>
-          <div class="background-row reveal"><span>Engineering</span><p>Python and Bash automation for testing helpers, repetitive security workflows and edge-case reproduction.</p></div>
-          <div class="background-row reveal"><span>Independent delivery</span><p><a href="https://www.fiverr.com/techmafia101" target="_blank" rel="noreferrer"><strong>90+ completed orders</strong> · 68 public reviews ↗</a></p></div>
-          <div class="background-row reveal"><span>Credentials</span><p>CRTP + CWES — practical offensive-security certifications.</p></div>
+        <div class="background-content">
+          <div class="metric-line metric-line-three" aria-label="Professional proof">
+            <div><strong>20+</strong><span>Web &amp; API assessments</span></div>
+            <div><strong>2</strong><span>Published CVEs</span></div>
+            <div><strong>4.8 / 5</strong><span>Fiverr · 68 reviews</span></div>
+          </div>
+
+          <div class="background-list">
+            <div class="background-row"><span>Professional</span><p><strong>Security Engineer / Penetration Tester at BugBase.</strong> Web &amp; API assessments, exploitability analysis, 500+ vulnerability reports reviewed / triaged, and remediation validation.</p></div>
+            <div class="background-row"><span>Built</span><p><a href="https://tryhackme.com/room/road" target="_blank" rel="noreferrer">TryHackMe Road ↗</a> · Intigriti 1337UP Traveller challenge · 20 Docker-based security labs for PWNX.</p></div>
+            <div class="background-row"><span>Recognition</span><p><strong>1st place</strong> — Great AppSec Hackathon 2026 · <strong>2nd individual</strong> — Ghost in the Ledger, IIT Bombay.</p></div>
+            <div class="background-row"><span>Engineering</span><p>Python and Bash automation for testing helpers, browser workflows, result processing and edge-case reproduction.</p></div>
+            <div class="background-row"><span>Independent delivery</span><p><a href="https://www.fiverr.com/techmafia101" target="_blank" rel="noreferrer"><strong>90+ completed orders</strong> · 68 public reviews ↗</a></p></div>
+            <div class="background-row"><span>Credentials</span><p>CRTP + CWES — practical offensive-security certifications.</p></div>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="pricing" class="pricing-section">
       <div class="wrap pricing-grid">
-        <div class="pricing-copy reveal">
+        <div class="pricing-copy">
           <p class="pricing-label">Independent VAPT</p>
           <h2>From scope to retest, you work with me.</h2>
-          <p>I scope the engagement, perform the testing, write the report and retest the fixes myself. No sales-to-tester handoff.</p>
+          <p>I scope the engagement, test the application, write the report and retest the fixes myself. There is no sales-to-tester handoff.</p>
           <p class="pricing-note">Direct engagement keeps the commercial model lean without reducing testing depth.</p>
         </div>
 
-        <div class="pricing-panel reveal">
-          <span>Typical Web + API VAPT</span>
-          <strong>₹60,000–₹90,000</strong>
-          <small>one remediation retest included</small>
+        <div class="pricing-panel">
+          <div class="price-head"><div><span>Typical Web + API VAPT</span><strong>₹60,000–₹90,000</strong></div><small>one remediation retest included</small></div>
           <dl>
-            <div><dt>Testing</dt><dd>Authentication, authorization, sessions, tenant isolation, APIs, business logic and high-risk workflows.</dd></div>
-            <div><dt>You receive</dt><dd>Prioritized report, reproducible evidence, business impact, remediation guidance and a findings readout.</dd></div>
-            <div><dt>Quote changes with</dt><dd>User roles, API surface, workflow complexity, integrations and number of applications. Targeted source-code review can be added when it materially improves coverage.</dd></div>
+            <div><dt>What I test</dt><dd>Authentication, authorization, sessions, tenant isolation, APIs, business logic and high-risk workflows.</dd></div>
+            <div><dt>What you receive</dt><dd>Prioritized report, reproducible evidence, business impact, remediation guidance and a findings readout.</dd></div>
+            <div><dt>What changes the quote</dt><dd>User roles, API surface, workflow complexity, integrations and number of applications. Targeted source-code review can be added when it materially improves coverage.</dd></div>
           </dl>
           <div class="sample-link"><a href="sample-finding.html">See a sample finding ↗</a><span>Synthetic example · no client data</span></div>
         </div>
@@ -114,7 +121,7 @@
     </section>
 
     <section class="contact-section">
-      <div class="wrap contact-grid reveal">
+      <div class="wrap contact-grid">
         <div><p>Start with the scope</p><h2>Have something that needs testing?</h2></div>
         <div class="contact-copy"><p>Application type, user roles, API scope and preferred testing window are enough to start. I’ll reply with scope questions, timeline and a fixed quote.</p><a class="email-link" href="mailto:jalajkumar1011@gmail.com?subject=VAPT%20scope%20request&body=Hi%20Jalaj%2C%0A%0AApplication%20type%3A%0AUser%20roles%3A%0AAPI%20scope%3A%0ATesting%20window%3A%0A%0AThanks%2C">jalajkumar1011@gmail.com ↗</a><div class="socials"><a href="https://www.linkedin.com/in/jalajknimesh" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://www.fiverr.com/techmafia101" target="_blank" rel="noreferrer">Fiverr ↗</a><a href="https://github.com/jalajknimesh" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://tryhackme.com/room/road" target="_blank" rel="noreferrer">TryHackMe ↗</a></div></div>
       </div>

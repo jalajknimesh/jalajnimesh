@@ -28,10 +28,33 @@ if (isHome) {
     }
   }
 
+  document.querySelectorAll('.case-row').forEach((row) => {
+    const org = row.querySelector('.case-org strong');
+    if (!org || org.textContent.trim() !== 'Passport Seva Portal') return;
+    const label = row.querySelector('.case-label');
+    const title = row.querySelector('.case-finding h3');
+    const body = row.querySelector('.case-finding > p:not(.case-label):not(.case-proof)');
+    const proof = row.querySelector('.case-proof');
+    if (label) label.textContent = 'Account recovery · authentication';
+    if (title) title.textContent = 'Recovery-flow weakness with account-takeover risk.';
+    if (body) body.textContent = 'The finding affected a high-value identity account flow and could expose sensitive account data if abused. The issue was later fixed.';
+    if (proof) proof.innerHTML = '<strong>Impact:</strong> account-takeover risk <span>·</span> issue later fixed';
+  });
+
   const background = document.querySelector('.background-copy');
-  if (background && !background.querySelector('.background-link')) {
+  if (background && !background.querySelector('.automation-note')) {
+    const directNote = background.querySelector('.direct-note');
+    const automation = document.createElement('p');
+    automation.className = 'automation-note';
+    automation.textContent = 'I also build Python and Bash tooling for security and automation workflows, which helps me create targeted test helpers and reproduce edge cases rather than relying on scanner output alone.';
+    if (directNote) background.insertBefore(automation, directNote);
+
     const credentials = background.querySelector('.credential-line');
     if (credentials) {
+      const extra = document.createElement('span');
+      extra.textContent = 'Python / Bash automation';
+      credentials.appendChild(extra);
+
       const link = document.createElement('a');
       link.className = 'background-link';
       link.href = 'work.html';
